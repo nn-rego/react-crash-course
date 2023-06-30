@@ -1,0 +1,13 @@
+version: '3'
+services:
+  react-basic:
+    build: 
+      context: ../
+      dockerfile: docker/Dockerfile
+    image: react_basic:1.0.0
+    container_name: learn_react_basic
+    volumes:
+      - ./app:/app
+    ports:
+      - 3001:3000
+    command: ["sh", "-c", "while true; do sleep 100; done"]
